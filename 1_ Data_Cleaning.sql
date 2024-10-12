@@ -18,7 +18,7 @@ FROM Analisis_Ventas_Vea
 SELECT DISTINCT Outlet_Location
 FROM Analisis_Ventas_Vea
 
-SELECT DISTINCT Outlet_Establishment_Year
+SELECT DISTINCT Year
 FROM Analisis_Ventas_Vea
 
 SELECT DISTINCT Item_Type
