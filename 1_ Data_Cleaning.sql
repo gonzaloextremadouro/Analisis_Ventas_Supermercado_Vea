@@ -1,12 +1,12 @@
 SELECT *
 FROM Ventas_Vea;
 
--- creamos una copia en la cual poder realizar el análisis
+-- creamos una copia en la cual poder realizar el anï¿½lisis
 SELECT *
 INTO Analisis_Ventas_Vea
 FROM Ventas_Vea
 
--- eliminamos las columnas dirimidas innecesarias en el análisis
+-- eliminamos las columnas dirimidas innecesarias en el anï¿½lisis
 ALTER TABLE Analisis_Ventas_Vea
 DROP COLUMN Item_Identifier, Outlet_Identifier, Item_Visibility, Item_Weight
 
@@ -27,7 +27,7 @@ FROM Analisis_Ventas_Vea
 SELECT DISTINCT Item_Fat_Content
 FROM Analisis_Ventas_Vea
 
--- realizamos la limpieza necesaria para corregir los valores 'reg' y 'LF'
+-- realizamos la limpieza necesaria para corregir los valores incoherentes
 UPDATE Analisis_Ventas_Vea
 SET Item_Fat_Content = 'Low Fat'
 WHERE Item_Fat_Content = 'LF'
@@ -35,6 +35,10 @@ WHERE Item_Fat_Content = 'LF'
 UPDATE Analisis_Ventas_Vea
 SET Item_Fat_Content = 'Regular'
 WHERE Item_Fat_Content = 'reg'
+
+UPDATE Analisis_Ventas_Vea
+SET Item_Fat_Content = 'Low Fat'
+WHERE Item_Fat_Content = 'low fat'
 
 -- chequeamos si el problema fue solucionado
 SELECT DISTINCT Item_Fat_Content
