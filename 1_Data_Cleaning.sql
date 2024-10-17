@@ -6,7 +6,7 @@ SELECT *
 INTO Analisis_Ventas_Vea
 FROM Ventas_Vea
 
--- eliminamos las columnas dirimidas innecesarias en el an�lisis
+-- eliminamos las columnas consideradas innecesarias en el an�lisis
 ALTER TABLE Analisis_Ventas_Vea
 DROP COLUMN Item_Identifier, Outlet_Identifier, Item_Visibility, Item_Weight
 
